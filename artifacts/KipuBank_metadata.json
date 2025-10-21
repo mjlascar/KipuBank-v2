@@ -1,0 +1,318 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_retiroMax",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_bankCap",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "KipuBank__MontoDepositoEsCero",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "KipuBank__MontoRetiroEsCero",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "saldo",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "monto",
+						"type": "uint256"
+					}
+				],
+				"name": "KipuBank__SaldoInsuficiente",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "totalDepositado",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "topeBanco",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "monto",
+						"type": "uint256"
+					}
+				],
+				"name": "KipuBank__TopeDelBancoExcedido",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "KipuBank__TransferenciaFallida",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "monto",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "umbral",
+						"type": "uint256"
+					}
+				],
+				"name": "KipuBank__UmbralDeRetiroExcedido",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "usuario",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "monto",
+						"type": "uint256"
+					}
+				],
+				"name": "Deposito",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "usuario",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "monto",
+						"type": "uint256"
+					}
+				],
+				"name": "Retiro",
+				"type": "event"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [],
+				"name": "i_bankCap",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "i_retiroMax",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "obtenerEstadoBanco",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "totalDepositado",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "topeDelBanco",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "numDepositos",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "numRetiros",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_usuario",
+						"type": "address"
+					}
+				],
+				"name": "obtenerSaldoUsuario",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_monto",
+						"type": "uint256"
+					}
+				],
+				"name": "retirar",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"author": "Marcos",
+			"kind": "dev",
+			"methods": {},
+			"title": "KipuBank",
+			"version": 1
+		},
+		"userdoc": {
+			"errors": {
+				"KipuBank__MontoDepositoEsCero()": [
+					{
+						"notice": "Se activa si el monto del depósito es cero"
+					}
+				],
+				"KipuBank__MontoRetiroEsCero()": [
+					{
+						"notice": "si el monto a retirar es cero"
+					}
+				],
+				"KipuBank__SaldoInsuficiente(uint256,uint256)": [
+					{
+						"notice": "si el usuario no tiene saldo suficiente para el retiro"
+					}
+				],
+				"KipuBank__TopeDelBancoExcedido(uint256,uint256,uint256)": [
+					{
+						"notice": "si el deposito excede el limite total del banco"
+					}
+				],
+				"KipuBank__TransferenciaFallida()": [
+					{
+						"notice": "si la transferencia de ETH al usuario falla"
+					}
+				],
+				"KipuBank__UmbralDeRetiroExcedido(uint256,uint256)": [
+					{
+						"notice": "si el monto a retirar excede el umbral por transaccion"
+					}
+				]
+			},
+			"events": {
+				"Deposito(address,uint256)": {
+					"notice": "eventos"
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"i_bankCap()": {
+					"notice": "limite inmutable de depositos"
+				},
+				"i_retiroMax()": {
+					"notice": "limite inmutable de retiro"
+				},
+				"obtenerEstadoBanco()": {
+					"notice": "Devuelve el saldo de un usuario"
+				},
+				"obtenerSaldoUsuario(address)": {
+					"notice": "Devuelve el saldo de un usuario"
+				},
+				"retirar(uint256)": {
+					"notice": "Permite a un usuario retirar su ETH"
+				}
+			},
+			"notice": "contrato para depositar y retirar Ether,  con fines educativos.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/kipu-bank.sol": "KipuBank"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/kipu-bank.sol": {
+			"keccak256": "0xe522e8bb2780d842ec13c88c272ea241b9d2bb3639d6eebbf2786f4b44f60cd0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5a44d992e64dfd3c534cdde25e7123fab4ab0aed3cef1f2e75291860714ec5ae",
+				"dweb:/ipfs/QmZw33dCKiqPW1SWCZVPk7UdzsmffMB7XrfwXm6y99xZUL"
+			]
+		}
+	},
+	"version": 1
+}
