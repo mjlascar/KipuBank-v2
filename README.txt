@@ -42,7 +42,7 @@ Despliegue (con Remix)
   Ingresa el price feed de ETH para tu red (sepolia: 0x694AA1769357215DE4FAC081bf1f309aDC325306)
   Haz clic en "Deploy" y confirma en MetaMask.
 
-Etherscan de mi deploy: https://sepolia.etherscan.io/address/0xbb85b8d8bfff39c6d6382307e04adc372e2023a2
+Etherscan de mi deploy con codigo verificado: https://sepolia.etherscan.io/address/0xbb85b8d8bfff39c6d6382307e04adc372e2023a2
 Para testear se agrego WBTC, y 
 --agregue LINK (token 0x779877A7B0D9E8603169DdbD7836e478b4624789, priceFeed 0xc59E3633BAAC79493d908e63626716e204A45EdF)
 --aprobe el uso de LINK por parte de mi KIPU BANK desde https://sepolia.etherscan.io/token/0x779877A7B0D9E8603169DdbD7836e478b4624789#writeContract
